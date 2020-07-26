@@ -21,6 +21,7 @@ The function should take in a number and return the string representation of the
     # 0 = scissor, 1 = rock, 2 = paper
     # for example if the variable hand is 0, it should return the string "scissor"
 """
+import random
 
 
 def get_hand(hand):
@@ -36,3 +37,12 @@ print("This application is a game of rock-paper-scissors.")
 print("You will be playing against me. I will randomly choose.")
 print("0 = scissor, 1 = rock, 2 = paper")
 user_input = int(input("Please enter 0, 1, or 2: "))
+
+if not 0 <= user_input <= 2:
+    print("I guess you don\'t want to play with me.")
+else:
+    computer_input = random.randint(0, 2)
+    print(f"You chose {get_hand(user_input)}")
+    print(f"I chose {get_hand(computer_input)}")
+
+
